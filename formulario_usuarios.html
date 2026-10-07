@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Manutenção de Usuários do Sistema Interno</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #eef2f3; padding: 20px; }
+        form { background: white; max-width: 650px; margin: 0 auto; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        fieldset { border: 2px solid #bdc3c7; border-radius: 6px; padding: 20px; margin-bottom: 20px; }
+        legend { font-weight: bold; color: #2c3e50; background: #ecf0f1; padding: 5px 10px; border-radius: 4px; }
+        .campo { margin-bottom: 15px; }
+        label { display: inline-block; width: 140px; font-weight: bold; color: #34495e; }
+        input[type="text"], input[type="password"], input[type="date"], select, textarea { width: 320px; padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+        textarea { width: 450px; height: 80px; }
+        .botoes { text-align: center; margin-top: 20px; }
+        button { padding: 10px 20px; font-size: 14px; font-weight: bold; border: none; border-radius: 4px; cursor: pointer; color: white; }
+        .btn-cadastrar { background-color: #27ae60; }
+        .btn-excluir { background-color: #c0392b; }
+    </style>
+</head>
+<body>
+
+    <form action="#" method="post">
+        <fieldset>
+            <legend>MANUTENÇÃO DE USUÁRIOS DO SISTEMA INTERNO</legend>
+            
+            <div class="campo">
+                <label for="login">Login:</label>
+                <input type="text" id="login" name="login" required placeholder="Digite o usuário">
+            </div>
+
+            <div class="campo">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+            </div>
+
+            <div class="campo">
+                <label for="status">Status:</label>
+                <select id="status" name="status">
+                    <option value="ativo">Ativo</option>
+                    <option value="inativo" selected>Inativo</option>
+                    <option value="bloqueado">Bloqueado</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label>Tipo:</label>
+                <input type="radio" id="tipo_tecnico" name="tipo" value="Tecnico"> <label for="tipo_tecnico" style="width:auto; font-weight:normal;">Técnico</label>
+                <input type="radio" id="tipo_professor" name="tipo" value="Professor"> <label for="tipo_professor" style="width:auto; font-weight:normal;">Professor</label>
+                <input type="radio" id="tipo_aluno" name="tipo" value="Aluno"> <label for="tipo_aluno" style="width:auto; font-weight:normal;">Aluno</label>
+            </div>
+
+            <div class="campo">
+                <label for="dt_criacao">Data Criação:</label>
+                <input type="date" id="dt_criacao" name="dt_criacao">
+            </div>
+
+            <div class="campo">
+                <label>Perfil:</label>
+                <input type="radio" id="perfil_convidado" name="perfil" value="Convidado"> <label for="perfil_convidado" style="width:auto; font-weight:normal;">Convidado</label>
+                <input type="radio" id="perfil_admin" name="perfil" value="Administrador"> <label for="perfil_admin" style="width:auto; font-weight:normal;">Administrador</label>
+            </div>
+
+            <div class="campo">
+                <label for="obs">Observações:</label><br>
+                <textarea id="obs" name="obs" placeholder="Insira observações relevantes sobre o usuário..."></textarea>
+            </div>
+
+            <div class="campo">
+                <label>Módulos:</label><br>
+                <input type="checkbox" id="mod_compras" name="modulos" value="Compras"> <label for="mod_compras" style="width:auto; font-weight:normal;">Compras</label>
+                <input type="checkbox" id="mod_bib" name="modulos" value="Biblioteca"> <label for="mod_bib" style="width:auto; font-weight:normal;">Biblioteca</label>
+                <input type="checkbox" id="mod_acad" name="modulos" value="Acadêmico"> <label for="mod_acad" style="width:auto; font-weight:normal;">Acadêmico</label><br>
+                <input type="checkbox" id="mod_doc" name="modulos" value="Documentacao"> <label for="mod_doc" style="width:auto; font-weight:normal;">Documentação</label>
+                <input type="checkbox" id="mod_rh" name="modulos" value="RecursosHumanos"> <label for="mod_rh" style="width:auto; font-weight:normal;">Recursos Humanos</label>
+            </div>
+
+            <!-- Campo oculto conforme visto em aula para controle de banco de dados -->
+            <input type="hidden" name="id_sistema" value="99281">
+
+            <div class="botoes">
+                <button type="submit" class="btn-cadastrar">Cadastrar</button>
+                <button type="reset" class="btn-excluir">Limpar / Excluir</button>
+            </div>
+        </fieldset>
+    </form>
+
+</body>
+</html>
