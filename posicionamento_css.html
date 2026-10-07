@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Estudo de Posicionamento CSS</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding-top: 60px; height: 2000px; background-color: #f9f9f9; }
+        
+        /* Menu Fixo no topo da tela independentemente da rolagem */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #1B4F72;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; background: white; border-radius: 8px; }
+
+        /* Posicionamento Estático (padrão do fluxo) */
+        .bloco-estatico {
+            position: static;
+            background-color: #d4e6f1;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-left: 5px solid #3498db;
+        }
+
+        /* Posicionamento Relativo (mantém espaço original, desloca visualmente) */
+        .bloco-relativo {
+            position: relative;
+            top: 15px;
+            left: 20px;
+            background-color: #fcf3cf;
+            padding: 15px;
+            margin-bottom: 35px;
+            border-left: 5px solid #f1c40f;
+        }
+
+        /* Posicionamento Sticky (rola normalmente até grudar no topo) */
+        .menu-sticky {
+            position: sticky;
+            top: 60px;
+            background-color: #e8f8f5;
+            padding: 10px 15px;
+            border: 1px solid #1abc9c;
+            font-weight: bold;
+            color: #16a085;
+            margin-bottom: 20px;
+        }
+
+        /* Bloco com Posicionamento Absoluto em container relativo */
+        .container-pai-absoluto {
+            position: relative;
+            background-color: #fadbd8;
+            padding: 30px;
+            height: 120px;
+            margin-top: 30px;
+            border-radius: 6px;
+        }
+
+        .selo-absoluto {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background-color: #e74c3c;
+            color: white;
+            padding: 5px 10px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h2>Painel Principal - Barra Fixa (fixed)</h2>
+    </header>
+
+    <div class="container">
+        <h1>Demonstração de Esquemas de Posicionamento</h1>
+        
+        <div class="bloco-estatico">
+            <h3>1. Position: static</h3>
+            <p>Este elemento segue estritamente o fluxo normal de blocos da página web.</p>
+        </div>
+
+        <div class="bloco-relativo">
+            <h3>2. Position: relative</h3>
+            <p>Este elemento foi deslocado 15px para baixo e 20px para a direita, mas o espaço original dele no fluxo foi preservado.</p>
+        </div>
+
+        <div class="menu-sticky">
+            3. Position: sticky (Continue rolando para testar o comportamento fixo temporário)
+        </div>
+
+        <div class="container-pai-absoluto">
+            <h3>4. Position: absolute</h3>
+            <p>Este container possui posicionamento relativo como âncora pai.</p>
+            <div class="selo-absoluto">DESTAQUE ABSOLUTO</div>
+        </div>
+    </div>
+
+</body>
+</html>
